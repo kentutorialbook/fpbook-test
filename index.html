@@ -75,12 +75,12 @@
     $(document).ready(() => {
 
       index.map((el, index) => {
-        $("#index").append("<h5>" + (index + 1) + "." + el[0] + "</h5>");
+        $("#index").append("<a href='#" + el[1] + "'><h5>" + (index + 1) + "." + el[0] + "</h5></a>");
 
         const jqxhr = $.get("articles/" + el[1])
           .done(data => {
             contentsHTML[index] =
-              "<h2>" + (index + 1) + "." + el[0] + "</h2>"
+              "<a id='" + el[1] + "'><h2>" + (index + 1) + "." + el[0] + "</h2></a>"
               + data;
 
             next(count.lastVal + 1)(count);
@@ -89,6 +89,7 @@
       });
 
     });
+    hor
     count['>>']
       (() =>
         count.lastVal === index.length
