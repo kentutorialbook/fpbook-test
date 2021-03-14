@@ -14,9 +14,6 @@
 </head>
 
 <body>
-  <h1>関数型プログラミング</h1>
-
-  <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -40,9 +37,9 @@
         const jqxhr = $.get("articles/" + el[1])
           .done(data => {
 
-            $("#index").append("<h4>" + el[0] + "</h4>");
+            $("#index").append("<h4>" + index + "." + el[0] + "</h4>");
 
-            $("#contents").append("<h2>" + el[0] + "</h2>");
+            $("#contents").append("<h2>" + index + "." + el[0] + "</h2>");
             $("#contents").append(data);
           })
           .fail(() => alert("load failed..."));
@@ -53,12 +50,20 @@
 
   </script>
 
+  <h1>忙しいプログラマーのための関数型プログラミング
+    Functional Programming for the Working Programmer</h1>
+
+  <h4>岡部 健 / Ken Okabe kentutorialbook@gmail.com</h4>
+
+  <hr>
+
   <div id="index"></div>
+
+  <hr>
 
   <div id="contents"></div>
 
-
-
+  <hr>
 </body>
 
 </html>
