@@ -37,9 +37,9 @@
         const jqxhr = $.get("articles/" + el[1])
           .done(data => {
 
-            $("#index").append("<h4>" + index + "." + el[0] + "</h4>");
+            $("#index").append("<h4>" + index++ + "." + el[0] + "</h4>");
 
-            $("#contents").append("<h2>" + index + "." + el[0] + "</h2>");
+            $("#contents").append("<h2>" + index++ + "." + el[0] + "</h2>");
             $("#contents").append(data);
           })
           .fail(() => alert("load failed..."));
