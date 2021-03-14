@@ -28,19 +28,21 @@
 
   <script type="text/javascript">
 
+    const index = [
+      ["何が問題なのか", "000_introduction.html"],
+      ["関数の基礎", "010_function.html"]
+    ];
+
     $(document).ready(() => {
 
-      $("li").map((index, element) => {
+      index.map((el, index) => {
 
-        alert(element.id);
-
-        const jqxhr = $.get("articles/" + element.id)
+        const jqxhr = $.get("articles/" + el[1])
           .done(data => {
-            alert(data);
 
-            alert(element.innerHTML);
+            $("#index").append("<h4>" + el[0] + "</h4>");
 
-            $("#contents").append("<h2>" + element.innerHTML + "</h2>");
+            $("#contents").append("<h2>" + el[0] + "</h2>");
             $("#contents").append(data);
           })
           .fail(() => alert("load failed..."));
@@ -51,10 +53,7 @@
 
   </script>
 
-  <ol>
-    <li id="000_introduction.html">何が問題なのか</li>
-    <li id="010_function.html">関数の基礎</li>
-  </ol>
+  <div id="index"></div>
 
   <div id="contents"></div>
 
