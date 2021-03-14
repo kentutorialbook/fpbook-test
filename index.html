@@ -35,13 +35,15 @@
         alert(element.id);
 
         const jqxhr = $.get("articles/" + element.id)
-          .done(() =>
-            alert("second success")
+          .done(data => {
+            alert(data);
+
+            alert(element.text())
+          }
           )
-          .fail(() => alert("load failed"));
+          .fail(() => alert("load failed..."));
 
       });
-
 
     });
 
