@@ -37,7 +37,7 @@
         const jqxhr = $.get("articles/" + el[1])
           .done(data => {
 
-            $("#index").append("<h4>" + (index + 1) + "." + el[0] + "</h4>");
+            $("#index").append("<h5>" + (index + 1) + "." + el[0] + "</h5>");
 
             $("#contents").append("<h2>" + (index + 1) + "." + el[0] + "</h2>");
             $("#contents").append(data);
@@ -53,7 +53,7 @@
   <h1>忙しいプログラマーのための関数型プログラミング
     Functional Programming for the Working Programmer</h1>
 
-  <h4>岡部 健 / Ken Okabe kentutorialbook@gmail.com</h4>
+  <h5>岡部 健 / Ken Okabe kentutorialbook@gmail.com</h5>
 
   <hr>
 
