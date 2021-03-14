@@ -39,6 +39,9 @@
             alert(data);
 
             alert(element.innerHTML);
+
+            $("#contents").append("<h2>" + element.innerHTML + "</h2>");
+            $("#contents").append(data);
           })
           .fail(() => alert("load failed..."));
 
