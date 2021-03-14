@@ -87,9 +87,10 @@
 
     });
     count['>>']
-      (count.lastVal === index.length
-        ? contentsHTML.map(html => $("#contents").append(html))
-        : undefined);
+      (() =>
+        count.lastVal === index.length
+          ? contentsHTML.map(html => $("#contents").append(html))
+          : undefined);
 
   </script>
 
