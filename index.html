@@ -79,7 +79,10 @@
 
         const jqxhr = $.get("articles/" + el[1])
           .done(data => {
-            contentsHTML[index] = "<h2>" + (index + 1) + "." + el[0] + "</h2>";
+            contentsHTML[index] =
+              "<h2>" + (index + 1) + "." + el[0] + "</h2>"
+              + data;
+
             next(count.lastVal + 1)(count);
           })
           .fail(() => alert("load failed..."));
